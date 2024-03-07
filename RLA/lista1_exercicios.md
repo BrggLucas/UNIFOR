@@ -10,24 +10,30 @@ Represente, em fluxograma e pseudocódigo, um **algoritmo para calcular a média
 flowchart TD
 A([INÍCIO])-->B{{Digite dois números:}}
 B-->C[/N1,N2/]
-C-->D[NF = N1 + N2 / 2]
-D-->E{NF >= 7}
-E--N-->F{{Você está reprovado}}
-E--S-->G{{Você está aprovado}}
-F-->H([FIM])
-G-->H
+C-->D{N1 ou N2 = 0}
+D--S-->E{{Você está reprovado}}
+D--N-->F[R = N1 + N2 / 2]
+F-->G{R >= 5}
+G--S-->H{{Você está aprovado}}
+G--N-->I{{Você está reprovado}}
+I-->J([FIM])
+H-->J
+E-->J
 ```
 #### Pseudocódigo
 ```
 ALGORITMO aprovado_reprovado
-DECLARE N1,N2 e NF POSITIVO
+DECLARE N1,N2 e R POSITIVO
 ESCREVA "Digite dois números"
 LEIA N1,N2
-NF = N1 + N2 / 2
-SE NF >= 7 ENTAO
-	ESCREVA "Você está aprovado"
-SENAO
+SE N1 OU N2 = 0 ENTAO
 	ESCREVA "Você está reprovado"
+SENAO
+	R = N1 + N2 / 2
+	SE R >= 5 
+		ESCREVA "Você está reprovado"
+	SENAO
+		ESCREVA "Você está reprovado"
 FIM_ALGORITMO
 ```
 ### Exercício 2
