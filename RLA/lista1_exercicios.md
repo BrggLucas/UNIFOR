@@ -4,8 +4,7 @@
 
 ## Lista 1 de Exercícios
 ### Exercício 1
-Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética
-entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
+Represente, em fluxograma e pseudocódigo, um **algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.**
 #### Fluxograma
 ```mermaid
 flowchart TD
@@ -21,7 +20,7 @@ G-->H
 #### Pseudocódigo
 ```
 ALGORITMO aprovado_reprovado
-DECLARE N1,N2 e NF
+DECLARE N1,N2 e NF POSITIVO
 ESCREVA "Digite dois números"
 LEIA N1,N2
 NF = N1 + N2 / 2
@@ -32,9 +31,7 @@ SENAO
 FIM_ALGORITMO
 ```
 ### Exercício 2
-Represente, em fluxograma e pseudocódigo, um algoritmo para calcular o novo salário de um
-funcionário. Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 terão
-aumento de 20%; os demais terão aumento de 10%.
+Represente, em fluxograma e pseudocódigo, um **algoritmo para calcular o novo salário de um funcionário. Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 terão aumento de 20%; os demais terão aumento de 10%.**
 #### Fluxograma
 ```mermaid
 flowchart TD
@@ -51,7 +48,7 @@ F-->I
 #### Pseudocódigo
 ```
 ALGORITMO novo_salario
-DECLARE N1,S1 E S2
+DECLARE N1,S1 E S2 POSITIVO
 ESCREVA "Digite seu salário"
 LEIA N1
 SE N1 >= 500 ENTAO
@@ -63,7 +60,7 @@ SENAO
 FIM_ALGORITMO
 ```
 ### Exercício 3
-Represente, em fluxograma e pseudocódigo, um algoritmo para determinar se um número inteiro e positivo é par ou impar.
+Represente, em fluxograma e pseudocódigo, um **algoritmo para determinar se um número inteiro e positivo é par ou impar.**
 
 #### Fluxograma
 
@@ -99,28 +96,30 @@ SENAO
 FIM_ALGORITMO
 ```
 ### Exercício 4
-Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do
-candidato(a), determinar se pode ou não tirar a CNH. Caso não atender a restrição de idade,
-calcular quantos anos faltam para o candidato estar apto.
+Represente, em fluxograma e pseudocódigo, um **algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. Caso não atender a restrição de idade, calcular quantos anos faltam para o candidato estar apto.**
 #### Fluxograma
 ```mermaid
 flowchart TD
 A([INICIO])-->B{{Digite sua idade}}
 B-->C[/N1/]
-C-->D{N1 < 18}
-D--N-->E{{Você não pode tirar a CNH}}
-D--S-->F{{Você pode tirar a CNH}}
-E-->G([FIM])
-F-->G
+C-->D[R = N1 - 18]
+D-->E{R >= 0}
+E--S-->F{{Você pode tirar a CNH}}
+E--N-->G[P = R + 18]
+G-->H{{Falta P anos para você poder tirar a CNH}}
+H-->I([FIM])
+F-->I
 ```
 #### Pseudocódigo
 ```
 ALGORITMO pode_tirar_cnh
-DECLARE N1
+DECLARE N1,R e P INTEIRO
 LEIA N1
-SE N1 < 18 ENTAO
-	ESCREVA "Você não pode tirar a CNH"
+R = N1 - 18
+SE R >= 0 ENTAO
+	ESCREVA "Você pode tirar a CNH"
 SENAO
-	ESCREVA "Voce pode tirar a CNH"
+	P = R + 18
+	ESCREVA "Falta P anos para voê poder tirar a CNH"
 FIM_ALGORITMO
 ```
