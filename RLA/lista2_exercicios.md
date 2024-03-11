@@ -37,7 +37,7 @@ E-->F([FIM])
 #### Pseudocódigo
 ```mermaid
 flowchart TD
-ALGORITMO calc_fahrenheit
+ALGORITMO calc_temperatura
 DECLARE N1,F 
 LEIA N1
 F == 5/9*N1+32
