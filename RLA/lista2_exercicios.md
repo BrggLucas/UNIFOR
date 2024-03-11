@@ -35,7 +35,8 @@ D-->E{{Seu resultado é F Fahrenheit}}
 E-->F([FIM])
 ```
 #### Pseudocódigo
-```
+```mermaid
+flowchart TD
 ALGORITMO calc_fahrenheit
 DECLARE N1,F 
 LEIA N1
@@ -490,5 +491,141 @@ ENTAO
 				ESCREVA "Seu imposto é de 27,5%"
 SENAO
 	ESCREVA "Isento de impostos"
+FIM_ALGORITMO
+```
+### Exercício 18
+Converta o critério de avaliação de alunos em escolas brasileiras para o critério utilizado em escolas americanas. Nas escolas brasileiras, a avaliação dos alunos é reportada por uma nota que varia de 0 a 10. Nas escolas americanas, a avaliação dos alunos é baseada
+em conceitos: A, B, C, D, ou F.
+a) A (9.0 a 10.0);
+b) B (8.0 a 8.9);
+c) C (7.0 a 7.9);
+d) D (5.0 a 6.9), e
+e) F (menor que 5.0)
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO])-->B{{"Digite sua nota"}}
+B-->C[/nota/]
+C-->D{nota > 9.0}
+D--S-->E{{Nota A}}
+D--N-->F{nota > 8.0, < 8.9}
+F--S-->G{{Nota B}}
+F--N-->H{nota > 7.0, < 7.9}
+H--S-->I{{Nota C}}
+H--N-->J{nota > 5, < 6.9}
+J--S-->K{{Nota D}}
+J--N-->L{{Nota F}}
+L-->M([FIM])
+K-->M
+I-->M
+G-->M
+E-->M
+```
+#### Pseudográfico
+```
+ALGORITMO_nota
+DECLARE nota
+LEIA nota
+SE nota > 9.0
+ENTAO
+	ESCREVA "Nota A"
+SENAO
+	SE nota > 8.0, < 8.9
+	ENTAO
+		ESCREVA "Nota B"
+	SENAO
+		SE nota > 7.0, < 7.9
+		ENTAO
+			ESCREVA "Nota C"
+		SENAO
+			SE nota > 5, < 6.9
+			ENTAO
+				ESCREVA "Nota D"
+			SENAO
+				ESCREVA "Nota F"
+FIM_ALGORITMO
+```
+### Exercício 19
+Leia um número e diga se é: nulo, positivo ou negativo.
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO])-->B{{Digite um número}}
+B-->C[/N1/]
+C-->D{N1 > 0}
+D--S-->E{{O número é positivo}}
+D--N-->F{N1 == 0}
+F--S-->G{{O número é nulo}}
+F--N-->H{{O número é negativo}}
+H-->I([FIM])
+G-->I
+E-->I
+```
+#### Pseudográfico
+```
+ALGORITMO_npn
+DECLARE N1
+LEIA N1
+SE N1 > 0
+ENTAO
+	ESCREVA "O número é positivo"
+SENAO
+	SE N1 == 0
+	ENTAO
+		ESCREVA "O número é nulo"
+	SENAO
+		ESCREVA "O número é negativo"
+FIM_ALGORITMO
+```
+### Exercício 20
+Receba dois números reais e um operador (vide slide 9). e efetue a operação correspondente com os valores recebidos (operandos). O algoritmo deve retornar o resultado da operação selecionada simulando todas as opeações de uma calculadora simples.
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO])-->B{{Digite dois números a serem calculados}}
+B-->C[/N1,N2/]
+C-->D{{Adição: +, Subtração: -, Multiplicação: *, Divisão: /. Digite o simbolo de acordo com o operador desejado}}
+D-->E[/operador/]
+E-->F{operador == +}
+F--S-->G[A == N1+N2]
+G-->H{{Resultado: A}}
+F--N-->I{operador == -}
+I--S-->J[S == N1-N2]
+J-->K{{Resultado: S}}
+I--N-->L{operador == *}
+L--S-->M[M == N1*N2]
+M-->N{{Resultado: M}}
+L--N-->O[D == N1/N2]
+O-->P{{Resultado: D}}
+P-->Q([FIM])
+N-->Q
+K-->Q
+H-->Q
+```
+#### Pseudográfico
+```
+ALGORITMO_calculadora
+DECLARE N1,N2,operador,A,S,M,D
+ESCREVA "Digite dois números a serem calculados"
+LEIA N1,N2
+ESCREVA "Adição: +, Subtração: -, Multiplicação: *, Divisão: /. Digite o simbolo de acordo com o operador desejado"
+LEIA operador
+SE operador == +
+ENTAO
+	A == N1+N2
+	ESCREVA "Resultado: A"
+SENAO
+	SE operador == S
+	ENTAO
+		S == N1+N2
+		ESCREVA "Resultado: S"
+	SENAO
+		SE operador == M
+		ENTAO
+			M == N1*N2
+			ESCREVA "Resultado: M"
+		SENAO
+			D == N1/N2
+			ESCREVA "Resultado: D"
 FIM_ALGORITMO
 ```
