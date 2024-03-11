@@ -35,9 +35,8 @@ D-->E{{Seu resultado é F Fahrenheit}}
 E-->F([FIM])
 ```
 #### Pseudocódigo
-```mermaid
-flowchart TD
-ALGORITMO calc_temperatura
+```
+ALGORITMO calc_fahrenheit
 DECLARE N1,F 
 LEIA N1
 F == 5/9*N1+32
