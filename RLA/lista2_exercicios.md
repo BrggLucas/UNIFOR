@@ -35,8 +35,7 @@ D-->E{{Seu resultado é F Fahrenheit}}
 E-->F([FIM])
 ```
 #### Pseudocódigo
-```mermaid
-flowchart TD
+```
 ALGORITMO calc_fahrenheit
 DECLARE N1,F 
 LEIA N1
