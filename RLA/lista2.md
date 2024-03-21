@@ -116,6 +116,9 @@ SENAO
 			SE operador == /
 			D == N1/N2
 			ESCREVA "Resultado: D"
+		FIM_SE
+	FIM_SE
+FIM_SE
 FIM_ALGORITMO
 ```
 
@@ -173,13 +176,17 @@ SENAO
 			ENTAO
 				ESCREVA "Sua categoria é juvenil B"
 			SENAO
-				SE idade > 18
+				idade > 18
 				ESCREVA "Sua categoria é adulta"
+			FIM_SE
+		FIM_SE
+	FIM_SE
+FIM_SE		
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
-| idade | idade >= 5, <= 7 | idade >= 8, <= 10 | idade >= 11, <= 13 | idade >= 14, <= 17 | idade >= 18 |  Saída 
+| idade | idade >= 5, <= 7 | idade >= 8, <= 10 | idade >= 11, <= 13 | idade >= 14, <= 17 |   |  Saída 
 | -- | -- | -- | -- | -- | -- | -- | 
 | 6 | S | N | N | N | N | Sua categoria é infantil A
 | 9 | N | S | N | N | N | Sua categoria é infantil B
