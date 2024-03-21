@@ -81,6 +81,7 @@ SE salario <= 500 ENTAO
 SENAO
 	S2 = salario + 10%
 	ESCREVA "Seu salário agora é S2"
+FIM_SE
 FIM_ALGORITMO
 ```
 
@@ -124,6 +125,8 @@ SENAO
 		ESCREVA "Você está reprovado"
 	SENAO
 		ESCREVA "Você está reprovado"
+	FIM_SE
+FIM_SE
 FIM_ALGORITMO
 ```
 #### Teste de mesa (1.0 ponto)
@@ -163,6 +166,7 @@ SE R >= 0 ENTAO
 SENAO
 	P = R * -1
 	ESCREVA "Falta F anos para voê poder tirar a CNH"
+FIM_SE
 FIM_ALGORITMO
 ```
 
