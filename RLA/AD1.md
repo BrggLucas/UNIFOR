@@ -301,7 +301,6 @@ ESCREVA "Digite o número de termos da série S:
 LEIA n
 S = 0
 PARA i DE 0 ATE n PASSO 1
-	i = 0,1,2,..,n
 	numerador = 2 * i + 1
 	denominador = 2 * i + 2
 	termo = numerador / denominador
@@ -355,15 +354,14 @@ H --> I
 
 ```
 ALGORITMO calc_fatorial
-DECLARE n,fator,i
+DECLARE n: INTEIRO,fator,i
 ESCREVA "Digite um número inteiro não-negativo"
 LEIA n
 SE n >= 0
-	ENTAO
+ENTAO
 	fator = 1
 	PARA i de 1 ATE n PASSO 1
-		i = 1,2,..n
-		fator + fator * 1
+		fator = fator * i
 	FIM_PARA
 	i > n
 	ESCREVA "O valor de, n, é:, fator"
