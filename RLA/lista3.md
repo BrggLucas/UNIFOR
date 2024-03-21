@@ -40,6 +40,7 @@ ENTAO
 	ESCREVA "O número é par"
 SENAO
 	ESCREVA "O número é impar"
+FIM_SE
 FIM_ALGORITMO
 ```
 
@@ -97,11 +98,32 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 #### Fluxograma (1.0 ponto)
 ```mermaid
 flowchart TD
+A([INICIO])-->B{{Digite quantos números quer calcular}}
+B-->C[/num/]
+C-->D[/soma = 0/]
+D-->E[[i = 1 ATE num PASSO 1]]
+E-->F{{Digite um número}}
+F-->G[/n/]
+G-->H[soma =+ n]
+H--LOOP-->E
+E-->I{{A soma dos seus números é ,soma}}
+I-->J([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 ```
-
+ALGORITMO seq_soma
+DECLARE num,soma,i,n
+ESCREVA "Digite quantois números quer calcular"
+LEIA num
+soma = 0
+PARA i DE 1 ATE num PASSO 1
+	ESCREVA "Digite um número"
+	LEIA n
+	soma =+ n
+FIM_PARA
+ESCREVA "A soma dos seu números é ,soma"
+FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
@@ -114,10 +136,39 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 #### Fluxograma (1.0 ponto)
 ```mermaid
 flowchart TD
+A([INICIO])-->B{{Digite uma nota}}
+B-->C[/nota/]
+C-->D[/lidas = 0/]
+D-->E[/soma = 0/]
+E-->F{nota >= 0}
+F--N-->G[media = soma / lidas]
+G-->H{{Foram lidas ,lidas notas. A média aritmética é media}}
+H-->I([FIM])
+F--S-->J[lidas =+ 1]
+J-->K[soma =+ nota]
+K-->L{{Digite uma nota}}
+L-->M[/nota/]
+M--LOOP-->F
 ```
 
 #### Pseudocódigo (1.0 ponto)
 ```
+ALGORITMO lidas_media
+DECLARE nota,lidas,soma,media
+ESCREVA "Digite uma nota"
+LEIA nota
+lidas = 0
+soma = 0
+ENQUANTO nota >= 0
+	lidas =+ 1
+	soma =+ nota
+	ESCREVA "Digite uma nota"
+	LEIA nota
+FIM_ENQUANTO
+media = soma / lidas
+ESCREVA "Foram lidas ,lidas notas. A média aritmética é media"
+FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
+
