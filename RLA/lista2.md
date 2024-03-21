@@ -59,7 +59,7 @@ FIM_ALGORITMO
 | C | F == 9 / 5 * C + 32 | Saída
 | -- | -- | -- |
 | 45 | F = 9 / 5 * 45 + 32 | Essa temperatura em fahrenheit é 113
-| 38 | F = 9 / 5 * 45 + 38 | Essa temperatura em fahrenheit é 100,4
+| 38 | F = 9 / 5 * 38 + 32 | Essa temperatura em fahrenheit é 100,4
 
 ### Exercício 03 (2.5 pontos)
 Receba dois números reais e um operador e efetue a operação correspondente com os valores recebidos (operandos). 
